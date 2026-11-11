@@ -24,8 +24,10 @@
     </div>
    </header>
    
+   <!-- All the panel sections of our app -->
    <main>
-    <aside class="card panel stack">
+    <!-- Task / Assignment section -->
+    <aside class="stack panel card">
         <h2>Task / Assignment</h2>
         <textarea id="assignment" class="text" placeholder="Task description..."></textarea>
 
@@ -41,6 +43,48 @@
             <span class="kbd">Ctrl</span> + <span class="kbd">Enter</span> to run.
         </div>
     </aside>
+
+    <!-- Editor and in-app preview section -->
+    <section id="web-only" class="stack">
+        <!-- entire editor section -->
+        <div id="webEditors" class="stack panel card">
+            <!-- functions for running and for previewing our code outside app -->
+            <div class="row">
+                <h2>HTML / CSS / JS</h2>
+                <div class="row">
+                    <button id="runWeb" class="btn ok">Run</button>
+                    <button id="openPreview" class="btn secondary">Preview in new window</button>
+                </div>
+            </div>
+
+            <!-- html, css & js tabs -->
+            <div id="webTabs" class="tabs" role="tablist" aria-label="web editors">
+                <button class="tab active" role="tab" aria-selected="true" tabindex="0" data-pane="html">HTML</button>
+                <button class="tab" role="tab" aria-selected="false" tabindex="-1" data-pane="css">CSS</button>
+                <button class="tab" role="tab" aria-selected="false" tabindex="-1" data-pane="js">JS</button>
+            </div>
+
+            <!-- three editor views -->
+            <!-- 1 --> <div class="editor-wrap" data-pane="html">
+                <div id="ed_html" class="editor"></div>
+            </div>
+
+            <!-- 2 --> <div class="editor-wrap" data-pane="css" hidden>
+                <div id="ed_css" class="editor"></div>
+            </div>
+
+            <!-- 3 --> <div class="editor-wrap" data-pane="js" hidden>
+                <div id="ed_js" class="editor"></div>
+            </div>
+        </div>
+
+
+        <!-- entire in-app preview section -->
+        <div class="stack">
+            <h2>Preview</h2>
+            <iframe id="preview" class="preview" sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-storage-access-by-user-activation allow-forms"></iframe>
+        </div>
+    </section>
    </main>
 </body>
 </html>
